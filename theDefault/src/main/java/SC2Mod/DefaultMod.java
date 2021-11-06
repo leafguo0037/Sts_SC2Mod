@@ -1,5 +1,6 @@
 package SC2Mod;
 
+import SC2Mod.patches.AbstractCardEnum;
 import basemod.*;
 import basemod.eventUtil.AddEventParams;
 import basemod.helpers.RelicType;
@@ -167,7 +168,8 @@ public class DefaultMod implements
     
     
     // =============== SUBSCRIBE, CREATE THE COLOR_GRAY, INITIALIZE =================
-    
+
+    public static final Color YELLOW = CardHelper.getColor(244,209,21);
     public DefaultMod() {
         logger.info("Subscribe to BaseMod hooks");
         
@@ -204,8 +206,8 @@ public class DefaultMod implements
         
         logger.info("Creating the color " + TheDefault.Enums.COLOR_GRAY.toString());
         
-        BaseMod.addColor(TheDefault.Enums.COLOR_GRAY, DEFAULT_GRAY, DEFAULT_GRAY, DEFAULT_GRAY,
-                DEFAULT_GRAY, DEFAULT_GRAY, DEFAULT_GRAY, DEFAULT_GRAY,
+        BaseMod.addColor(AbstractCardEnum.YELLOW, YELLOW, YELLOW, YELLOW,
+                YELLOW, YELLOW, YELLOW, YELLOW,
                 ATTACK_DEFAULT_GRAY, SKILL_DEFAULT_GRAY, POWER_DEFAULT_GRAY, ENERGY_ORB_DEFAULT_GRAY,
                 ATTACK_DEFAULT_GRAY_PORTRAIT, SKILL_DEFAULT_GRAY_PORTRAIT, POWER_DEFAULT_GRAY_PORTRAIT,
                 ENERGY_ORB_DEFAULT_GRAY_PORTRAIT, CARD_ENERGY_ORB);
@@ -421,6 +423,8 @@ public class DefaultMod implements
         // Add the Custom Dynamic variables
         BaseMod.addDynamicVariable(new DefaultCustomVariable());
         BaseMod.addDynamicVariable(new DefaultSecondMagicNumber());
+
+        BaseMod.addCard(new Strike_Yellow());
         
         logger.info("Adding cards");
         // Add the cards
