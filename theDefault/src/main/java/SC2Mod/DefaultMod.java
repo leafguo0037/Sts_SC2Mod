@@ -96,6 +96,7 @@ public class DefaultMod implements
     // Colors (RGB)
     // Character Color
     public static final Color DEFAULT_GRAY = CardHelper.getColor(64.0f, 70.0f, 70.0f);
+    public static final Color YELLOW = CardHelper.getColor(244,209,21);
     
     // Potion Colors in RGB
     public static final Color PLACEHOLDER_POTION_LIQUID = CardHelper.getColor(209.0f, 53.0f, 18.0f); // Orange-ish Red
@@ -169,7 +170,7 @@ public class DefaultMod implements
     
     // =============== SUBSCRIBE, CREATE THE COLOR_GRAY, INITIALIZE =================
 
-    public static final Color YELLOW = CardHelper.getColor(244,209,21);
+
     public DefaultMod() {
         logger.info("Subscribe to BaseMod hooks");
         
@@ -424,8 +425,6 @@ public class DefaultMod implements
         BaseMod.addDynamicVariable(new DefaultCustomVariable());
         BaseMod.addDynamicVariable(new DefaultSecondMagicNumber());
 
-        BaseMod.addCard(new Strike_Yellow());
-        
         logger.info("Adding cards");
         // Add the cards
         // Don't delete these default cards yet. You need 1 of each type and rarity (technically) for your game not to crash
@@ -440,10 +439,15 @@ public class DefaultMod implements
 
         //TODO: Rename the "DefaultMod" with the modid in your ModTheSpire.json file
         //TODO: The artifact mentioned in ModTheSpire.json is the artifactId in pom.xml you should've edited earlier
-        new AutoAdd("DefaultMod") // ${project.artifactId}
-            .packageFilter(AbstractDefaultCard.class) // filters to any class in the same package as AbstractDefaultCard, nested packages included
-            .setDefaultSeen(true)
-            .cards();
+//        new AutoAdd("SC2Mod") // ${project.artifactId}
+//            .packageFilter(Void_Ray.class) // filters to any class in the same package as AbstractDefaultCard, nested packages included
+//            .setDefaultSeen(true)
+//            .cards();
+        BaseMod.addCard(new Strike_Yellow());
+        BaseMod.addCard(new Defend_Yellow());
+        BaseMod.addCard(new Zealot_Y());
+        BaseMod.addCard(new Dark_Templar());
+        BaseMod.addCard(new Void_Ray());
 
         // .setDefaultSeen(true) unlocks the cards
         // This is so that they are all "seen" in the library,

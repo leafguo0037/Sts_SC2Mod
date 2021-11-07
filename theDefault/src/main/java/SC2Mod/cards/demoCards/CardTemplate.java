@@ -1,5 +1,6 @@
-package SC2Mod.cards;
+package SC2Mod.cards.demoCards;
 
+import SC2Mod.cards.AbstractDynamicCard;
 import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;

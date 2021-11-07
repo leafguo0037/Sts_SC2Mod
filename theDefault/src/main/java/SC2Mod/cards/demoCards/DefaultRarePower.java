@@ -1,5 +1,6 @@
-package SC2Mod.cards;
+package SC2Mod.cards.demoCards;
 
+import SC2Mod.cards.AbstractDynamicCard;
 import basemod.helpers.BaseModCardTags;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;

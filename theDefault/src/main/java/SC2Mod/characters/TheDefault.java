@@ -1,5 +1,6 @@
 package SC2Mod.characters;
 
+import SC2Mod.cards.demoCards.*;
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpriterAnimation;
 import com.badlogic.gdx.graphics.Color;
@@ -22,7 +23,6 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import SC2Mod.DefaultMod;
-import SC2Mod.cards.*;
 import SC2Mod.relics.DefaultClickableRelic;
 import SC2Mod.relics.PlaceholderRelic;
 import SC2Mod.relics.PlaceholderRelic2;

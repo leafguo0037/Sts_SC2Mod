@@ -1,4 +1,4 @@
-package SC2Mod.cards;
+package SC2Mod.cards.demoCards;
 
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;

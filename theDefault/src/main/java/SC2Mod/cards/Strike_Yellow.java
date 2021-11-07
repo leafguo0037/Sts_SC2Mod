@@ -25,7 +25,7 @@ import static SC2Mod.DefaultMod.makeCardPath;
 // Abstract Dynamic Card builds up on Abstract Default Card even more and makes it so that you don't need to add
 // the NAME and the DESCRIPTION into your card - it'll get it automatically. Of course, this functionality could have easily
 // Been added to the default card rather than creating a new Dynamic one, but was done so to deliberately to showcase custom cards/inheritance a bit more.
-public class Strike_Yellow extends CustomCard {
+public class Strike_Yellow extends AbstractDefaultCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
@@ -47,7 +47,7 @@ public class Strike_Yellow extends CustomCard {
 
 
     public static final String NAME = "打击";
-    public static final String DESCRIPTION = "造成6点伤害";
+    public static final String DESCRIPTION = "造成!D!点伤害";
 
     // /TEXT DECLARATION/
 
@@ -111,6 +111,10 @@ public class Strike_Yellow extends CustomCard {
     }
 
     // Upgraded stats.
+    @Override
+    public AbstractCard makeCopy() {
+        return new Strike_Yellow();
+    }
     @Override
     public void upgrade() {
         if (!upgraded) {
