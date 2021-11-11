@@ -3,6 +3,7 @@ package SC2Mod.cards;
 import SC2Mod.DefaultMod;
 import SC2Mod.characters.TheDefault;
 import SC2Mod.patches.AbstractCardEnum;
+import SC2Mod.patches.CustomTags;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -49,7 +50,8 @@ public class Defend_Yellow extends AbstractDefaultCard {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         baseBlock = BLOCK;
 
-        this.tags.add(CardTags.STARTER_DEFEND); //Tag your strike, defend and form (Wraith form, Demon form, Echo form, etc.) cards so that they function correctly.
+        this.tags.add(CardTags.STARTER_DEFEND);
+        this.tags.add(CustomTags.HERO_CARD);
     }
 
     // Actions the card should do.

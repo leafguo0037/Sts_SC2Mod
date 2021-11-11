@@ -1,6 +1,8 @@
 package SC2Mod;
 
+import SC2Mod.characters.Protoss;
 import SC2Mod.patches.AbstractCardEnum;
+import SC2Mod.patches.ProtossEnum;
 import basemod.*;
 import basemod.eventUtil.AddEventParams;
 import basemod.helpers.RelicType;
@@ -289,13 +291,14 @@ public class DefaultMod implements
     
     @Override
     public void receiveEditCharacters() {
-        logger.info("Beginning to edit characters. " + "Add " + TheDefault.Enums.THE_DEFAULT.toString());
-        
-        BaseMod.addCharacter(new TheDefault("the Default", TheDefault.Enums.THE_DEFAULT),
-                THE_DEFAULT_BUTTON, THE_DEFAULT_PORTRAIT, TheDefault.Enums.THE_DEFAULT);
-        
+        logger.info("Beginning to edit characters. " + "Add " + "Protoss of leaf");
+
+        BaseMod.addCharacter(new Protoss("Protoss", ProtossEnum.Protoss),
+                THE_DEFAULT_BUTTON, THE_DEFAULT_PORTRAIT, ProtossEnum.Protoss);
+
         receiveEditPotions();
-        logger.info("Added " + TheDefault.Enums.THE_DEFAULT.toString());
+        logger.info("Added " + "add protoss finish");
+
     }
     
     // =============== /LOAD THE CHARACTER/ =================
@@ -448,6 +451,8 @@ public class DefaultMod implements
         BaseMod.addCard(new Zealot_Y());
         BaseMod.addCard(new Dark_Templar());
         BaseMod.addCard(new Void_Ray());
+        BaseMod.addCard(new BG_Building());
+        BaseMod.addCard(new Hero_Form());
 
         // .setDefaultSeen(true) unlocks the cards
         // This is so that they are all "seen" in the library,
