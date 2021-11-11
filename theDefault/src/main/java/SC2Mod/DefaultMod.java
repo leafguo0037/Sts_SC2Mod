@@ -452,6 +452,7 @@ public class DefaultMod implements
         BaseMod.addCard(new Dark_Templar());
         BaseMod.addCard(new Void_Ray());
         BaseMod.addCard(new BG_Building());
+
         BaseMod.addCard(new Hero_Form());
 
         // .setDefaultSeen(true) unlocks the cards

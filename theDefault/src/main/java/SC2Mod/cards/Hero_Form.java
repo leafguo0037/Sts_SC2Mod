@@ -24,7 +24,7 @@ public class Hero_Form extends CustomCard {
     public static final String IMG = makeCardPath("Power.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String DESCRIPTION = "基础卡和英雄卡的数值+3,抽牌+1";
+    public static final String DESCRIPTION = "每次最多收到20点伤害，基础卡和英雄卡的数值+3,抽牌+1";
 
     // /TEXT DECLARATION/
 

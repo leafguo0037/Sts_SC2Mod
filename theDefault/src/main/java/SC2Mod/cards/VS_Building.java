@@ -2,17 +2,19 @@ package SC2Mod.cards;
 
 import SC2Mod.patches.AbstractCardEnum;
 import SC2Mod.patches.CustomTags;
-import SC2Mod.powers.BGpower;
+import SC2Mod.powers.VRpower;
+import SC2Mod.powers.VSpower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.utility.ScryAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.combat.GainPowerEffect;
 
 import static SC2Mod.DefaultMod.makeCardPath;
 
-public class BG_Building extends AbstractDefaultCard {
+public class VS_Building extends AbstractDefaultCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
@@ -23,9 +25,9 @@ public class BG_Building extends AbstractDefaultCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = "BG_Building";
-    public static final String NAME = "兵营";
-    public static final String DESCRIPTION = "获得!B!点格挡,获得一层兵营";
+    public static final String ID = "VS_Building";
+    public static final String NAME = "星门";
+    public static final String DESCRIPTION = "获得!B!点格挡，预见3,获得一层星门";
     public static final String IMG = makeCardPath("Skill.png");
 
     // /TEXT DECLARATION/
@@ -38,15 +40,15 @@ public class BG_Building extends AbstractDefaultCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = AbstractCardEnum.YELLOW;
 
-    private static final int COST = 1;
-    private static final int BLOCK = 5;
-    private static final int UPGRADE_PLUS_BLOCK = 3;
+    private static final int COST = 2;
+    private static final int BLOCK = 10;
+    private static final int UPGRADE_PLUS_BLOCK = 4;
 
 
     // /STAT DECLARATION/
 
 
-    public BG_Building() {
+    public VS_Building() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         baseBlock = BLOCK;
 
@@ -58,7 +60,8 @@ public class BG_Building extends AbstractDefaultCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
-        this.addToBot(new ApplyPowerAction(p,p,new BGpower(p,p,1),1));
+        this.addToBot(new ApplyPowerAction(p,p,new VSpower(p,p,1),1));
+        this.addToBot(new ScryAction(3));
     }
 
     //Upgraded stats.
