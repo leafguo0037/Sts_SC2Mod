@@ -1,6 +1,8 @@
 package SC2Mod;
 
+import SC2Mod.characters.Protoss;
 import SC2Mod.patches.AbstractCardEnum;
+import SC2Mod.patches.ProtossEnum;
 import basemod.*;
 import basemod.eventUtil.AddEventParams;
 import basemod.helpers.RelicType;
@@ -140,27 +142,27 @@ public class DefaultMod implements
     // =============== MAKE IMAGE PATHS =================
     
     public static String makeCardPath(String resourcePath) {
-        return getModID() + "Resources/images/cards/" + resourcePath;
+        return getModID() + "SC2ModResources/images/cards/" + resourcePath;
     }
     
     public static String makeRelicPath(String resourcePath) {
-        return getModID() + "Resources/images/relics/" + resourcePath;
+        return getModID() + "SC2ModResources/images/relics/" + resourcePath;
     }
     
     public static String makeRelicOutlinePath(String resourcePath) {
-        return getModID() + "Resources/images/relics/outline/" + resourcePath;
+        return getModID() + "SC2ModResources/images/relics/outline/" + resourcePath;
     }
     
     public static String makeOrbPath(String resourcePath) {
-        return getModID() + "Resources/images/orbs/" + resourcePath;
+        return getModID() + "SC2ModResources/images/orbs/" + resourcePath;
     }
     
     public static String makePowerPath(String resourcePath) {
-        return getModID() + "Resources/images/powers/" + resourcePath;
+        return getModID() + "SC2ModResources/images/powers/" + resourcePath;
     }
     
     public static String makeEventPath(String resourcePath) {
-        return getModID() + "Resources/images/events/" + resourcePath;
+        return getModID() + "SC2ModResources/images/events/" + resourcePath;
     }
     
     // =============== /MAKE IMAGE PATHS/ =================
@@ -289,13 +291,13 @@ public class DefaultMod implements
     
     @Override
     public void receiveEditCharacters() {
-        logger.info("Beginning to edit characters. " + "Add " + TheDefault.Enums.THE_DEFAULT.toString());
+        logger.info("Beginning to edit characters. " + "Add " + "Protoss of leaf");
         
-        BaseMod.addCharacter(new TheDefault("the Default", TheDefault.Enums.THE_DEFAULT),
-                THE_DEFAULT_BUTTON, THE_DEFAULT_PORTRAIT, TheDefault.Enums.THE_DEFAULT);
+        BaseMod.addCharacter(new Protoss("Protoss", ProtossEnum.Protoss),
+                THE_DEFAULT_BUTTON, THE_DEFAULT_PORTRAIT, ProtossEnum.Protoss);
         
         receiveEditPotions();
-        logger.info("Added " + TheDefault.Enums.THE_DEFAULT.toString());
+        logger.info("Added " + "add protoss finish");
     }
     
     // =============== /LOAD THE CHARACTER/ =================
@@ -448,6 +450,7 @@ public class DefaultMod implements
         BaseMod.addCard(new Zealot_Y());
         BaseMod.addCard(new Dark_Templar());
         BaseMod.addCard(new Void_Ray());
+        BaseMod.addCard(new BG_Building());
 
         // .setDefaultSeen(true) unlocks the cards
         // This is so that they are all "seen" in the library,
