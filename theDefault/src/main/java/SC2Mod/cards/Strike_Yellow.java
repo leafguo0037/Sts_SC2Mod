@@ -3,6 +3,7 @@ package SC2Mod.cards;
 import SC2Mod.DefaultMod;
 import SC2Mod.characters.TheDefault;
 import SC2Mod.patches.AbstractCardEnum;
+import SC2Mod.patches.CustomTags;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -35,7 +36,7 @@ public class Strike_Yellow extends AbstractDefaultCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = "Strike_Yellow";
+    public static final String ID = "Strike_Y";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     public static final String IMG = makeCardPath("Attack.png");
@@ -91,6 +92,7 @@ public class Strike_Yellow extends AbstractDefaultCard {
 
         this.tags.add(CardTags.STARTER_STRIKE); //Tag your strike, defend and form (Wraith form, Demon form, Echo form, etc.) cards so that they function correctly.
         this.tags.add(CardTags.STRIKE);
+        this.tags.add(CustomTags.HERO_CARD);
     }
 
     // Actions the card should do.
